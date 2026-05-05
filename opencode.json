@@ -3,7 +3,7 @@
   "mcp": {
     "thunderfart": {
       "type": "remote",
-      "url": "http://localhost:9009/mcp",
+      "url": "http://192.168.178.74:9009/mcp",
       "enabled": true
     }
   }
