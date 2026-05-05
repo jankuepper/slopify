@@ -3,12 +3,12 @@ RUN apt update -y && apt upgrade -y && apt install -y \
   ffmpeg \
   python3 \
   gnupg \
-  python \ 
+  python3-pip \ 
   build-essential \
   curl \
   pkg-config \
   libssl-dev \
-  ca-certificates 3-pip \
+  ca-certificates \
   && curl -fsSL https://deb.nodesource.com/setup_25.x | bash - \
   && apt install -y nodejs
 RUN pip install openai-whisper
