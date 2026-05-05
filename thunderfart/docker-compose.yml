@@ -23,7 +23,7 @@ volumes:
     driver: local
     driver_opts:
       type: "nfs"
-      o: "addr=192.168.178.28,r"
+      o: "addr=192.168.178.28,ro"
       device: ":/mnt/user/Movies"
   media:
     driver: local
