@@ -1,5 +1,6 @@
 import { readdirSync } from "node:fs"
 export function cd() {
-  console.log("cd executed!!")
-  return { "diretory-content": readdirSync(".", { withFileTypes: true }) }
+  const dir = readdirSync(".", { withFileTypes: true })
+  console.log(dir)
+  return { "diretory-content": dir }
 }
