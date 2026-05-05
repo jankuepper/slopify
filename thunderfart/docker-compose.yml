@@ -1,0 +1,25 @@
+services:
+  thunderfart:
+    image: thunderfart
+    container_name: thunderfart
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 9009:9009
+    volumes:
+      - movies:/mnt/Movies
+      - media:/mnt/media
+volumes:
+  movies:
+    driver: local
+    driver_opts:
+      type: "nfs"
+      o: "addr=192.168.178.28,r"
+      device: ":/mnt/user/Movies"
+  media:
+    driver: local
+    driver_opts:
+      type: "nfs"
+      o: "addr=192.168.178.28,rw"
+      device: ":/mnt/user/media"

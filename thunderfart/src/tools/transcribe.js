@@ -1,4 +1,5 @@
 import { spawn } from "node:child_process"
+
 export async function transcribe({ path }) {
   return new Promise((resolve, reject) => {
     // TODO: correct command options
