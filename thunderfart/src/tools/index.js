@@ -15,7 +15,8 @@ export function initTools(server) {
   server.registerTool(
     'readdir',
     {
-      description: 'list content of directory'
+      description: 'list content of directory',
+      outputSchema: z.object({ "directory-content": z.array(z.string()) })
     },
     () => cd()
   )
