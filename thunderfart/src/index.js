@@ -14,7 +14,7 @@ app.post('/mcp', async (req, res) => {
   // Stateless example: create a transport per request.
   // For stateful mode (sessions), keep a transport instance around and reuse it.
   console.log(req.body)
-  const transport = new NodeStreamableHTTPServerTransport({ sessionIdGenerator: undefined, allowedHosts: ['*'] });
+  const transport = new NodeStreamableHTTPServerTransport({ sessionIdGenerator: undefined, allowedHosts: ['192.168.178.74', 'localhost'] });
   await server.connect(transport);
   await transport.handleRequest(req, res, req.body);
 });
