@@ -1,10 +1,15 @@
-FROM 192.168.178.60:5000/ubuntu-ffmpeg
+FROM debian:bullseye-slim
 RUN apt-get update && \
   apt-get install -y \
   ffmpeg \
   python3 \
   gnupg \
-  python3-pip \
+  python \ 
+  build-essential \
+  curl \
+  pkg-config \
+  libssl-dev \
+  ca-certificates 3-pip \
   && curl -fsSL https://deb.nodesource.com/setup_25.x | bash - \
   && apt install -y nodejs
 RUN pip install openai-whisper
