@@ -17,7 +17,7 @@ export function initTools(server) {
     {
       description: 'list content of directory'
     },
-    () => cd()
+    (_) => cd()
   )
   return server
 }
