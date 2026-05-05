@@ -1,6 +1,5 @@
-FROM debian:bullseye-slim
-RUN apt-get update && \
-  apt-get install -y \
+FROM ubuntu:24.04
+RUN apt update -y && apt upgrade -y && apt install -y \
   ffmpeg \
   python3 \
   gnupg \
