@@ -15,7 +15,7 @@ export function initTools(server) {
   server.registerTool(
     'readdir',
     {
-      description: 'list content of directory'
+      description: 'list content of the /mnt/Movies directory'
     },
     (_) => cd()
   )

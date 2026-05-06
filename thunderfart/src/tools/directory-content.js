@@ -1,7 +1,8 @@
 import { readdirSync } from "node:fs"
+import { join } from "node:path"
+
 export function cd() {
-  const dir = readdirSync("/mnt/Movies", { encoding: 'utf-8', withFileTypes: true })
-  const result = dir.map((d) => d.name)
+  const result = readdir("/mnt/Movies", [])
   const response = {
     content: [
       {
@@ -12,4 +13,18 @@ export function cd() {
   }
   console.log(response)
   return response
+}
+
+function readdir(path, files) {
+  const entries = readdirSync(path, { encoding: "utf-8", withFileTypes: true })
+  entries.forEach((entry) => {
+    const p = join(path, entry.name)
+    if (entry.isDirectory()) {
+      readdir(p, files)
+
+    } else {
+      files.push(p)
+    }
+  })
+  return files
 }
